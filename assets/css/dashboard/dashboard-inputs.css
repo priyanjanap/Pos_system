@@ -1,0 +1,145 @@
+:root {
+    --header-height: 3.5rem;
+    --first-color: hsl(228, 85%, 63%);
+    --title-color: hsl(228, 18%, 16%);
+    --text-color: hsl(228, 8%, 56%);
+    --body-color: hsl(228, 100%, 99%);
+    --shadow-color: hsla(228, 80%, 4%, .1);
+    --customer-section: hsla(228, 80%, 4%, .1);
+
+    --body-font: "Nunito Sans", system-ui;
+    --normal-font-size: .938rem;
+    --smaller-font-size: .75rem;
+    --tiny-font-size: .75rem;
+
+    --font-regular: 400;
+    --font-semi-bold: 600;
+
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+body {
+    font-family: var(--font-regular);
+    background-color: var(--body-color);
+    margin: 0;
+    padding: 20px;
+}
+
+.dashboard-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    top: 0;
+}
+
+/* Overview Cards */
+.overview-cards {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 24%;
+    text-align: center;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.card p {
+    font-size: 1.5rem;
+    margin: 10px 0 0;
+    color: #3498db;
+}
+
+/* Search/Filter Bar */
+.search-filter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.search-filter input {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.search-filter button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.search-filter button:hover {
+    background-color: #2980b9;
+}
+
+/* Recent Activity Section */
+.recent-activity {
+    width: 100%;
+    max-width: 1000px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recent-activity h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.recent-activity ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-activity li {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.quick-actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    padding-bottom: 50px;
+}
+
+.quick-actions button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.quick-actions button:hover {
+    background-color: #2980b9;
+}

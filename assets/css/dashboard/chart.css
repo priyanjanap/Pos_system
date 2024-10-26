@@ -1,0 +1,93 @@
+:root {
+    --header-height: 3.5rem;
+    --first-color: hsl(228, 85%, 63%);
+    --title-color: hsl(228, 18%, 16%);
+    --text-color: hsl(228, 8%, 56%);
+    --body-color: hsl(228, 100%, 99%);
+    --shadow-color: hsla(228, 80%, 4%, .1);
+    --customer-section: hsla(228, 80%, 4%, .1);
+
+    --body-font: "Nunito Sans", system-ui;
+    --normal-font-size: .938rem;
+    --smaller-font-size: .75rem;
+    --tiny-font-size: .75rem;
+
+    --font-regular: 400;
+    --font-semi-bold: 600;
+
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+body {
+    font-family: var(--body-font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--body-color);
+}
+
+.chart-container {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    bottom: 50px;
+    max-width: 500px;
+
+}
+
+h2 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.bar-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    height: 30vh; /* Adjusted for a responsive height */
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12%;
+    padding-left: 5px;
+    height: 25vh;
+    transform: rotate(180deg);
+}
+
+.bar {
+    width: 100%;
+    background-color: var(--first-color);
+    text-align: center;
+    color: white;
+    font-size: 10px;
+    transition: height 0.3s ease-in-out;
+    border-radius: 3px;
+    padding-top: 5px;
+    transform: rotate(180deg);
+
+}
+
+.bar:hover {
+    background-color: #2980b9;
+    cursor: pointer;
+}
+
+.month-label {
+    font-size: 12px;
+    color: var(--text-color);
+    transform: rotate(180deg);
+
+}

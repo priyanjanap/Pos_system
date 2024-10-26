@@ -1,0 +1,197 @@
+/*=============== BASE ===============*/
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body,
+input,
+button {
+	font-size: var(--normal-font-size);
+	font-family: var(--body-font);
+}
+
+body {
+	color: var(--white-color);
+}
+
+input,
+button {
+	border: none;
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/*=============== FORM STYLING (Login and Signup) ===============*/
+.login,
+.signup {
+	position: relative;
+	height: 100vh;
+	display: grid;
+	align-items: center;
+}
+
+.login__img,
+.signup__img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.login__form,
+.signup__form {
+	position: relative;
+	background-color: hsla(0, 0%, 10%, .1);
+	border: 2px solid var(--white-color);
+	margin-inline: 1.5rem;
+	padding: 2.5rem 1.5rem;
+	border-radius: 1rem;
+	backdrop-filter: blur(8px);
+}
+
+.login__title,
+.signup__title {
+	text-align: center;
+	font-size: var(--h1-font-size);
+	font-weight: var(--font-medium);
+	margin-bottom: 2rem;
+}
+
+.login__content,
+.signup__content {
+	display: grid;
+	row-gap: 1.75rem;
+	margin-bottom: 1.5rem;
+}
+
+.login__box,
+.signup__box {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	align-items: center;
+	column-gap: .75rem;
+	border-bottom: 2px solid var(--white-color);
+}
+
+.login__icon,
+.signup__icon,
+.login__eye,
+.signup__eye {
+	font-size: 1.25rem;
+}
+
+.login__input,
+.signup__input {
+	width: 100%;
+	padding-block: .8rem;
+	background: none;
+	color: var(--white-color);
+	position: relative;
+	z-index: 1;
+}
+
+.login__box-input,
+.signup__box-input {
+	position: relative;
+}
+
+.login__label,
+.signup__label {
+	position: absolute;
+	left: 0;
+	top: 13px;
+	font-weight: var(--font-medium);
+	transition: top .3s, font-size .3s;
+}
+
+.login__eye,
+.signup__eye {
+	position: absolute;
+	right: 0;
+	top: 18px;
+	z-index: 10;
+	cursor: pointer;
+}
+
+.login__box:nth-child(2) input,
+.signup__box:nth-child(2) input {
+	padding-right: 1.8rem;
+}
+
+/* Input focus move up label */
+.login__input:focus + .login__label,
+.signup__input:focus + .signup__label {
+	top: -12px;
+	font-size: var(--small-font-size);
+}
+
+/* Input focus sticky top label */
+.login__input:not(:placeholder-shown).login__input:not(:focus) + .login__label,
+.signup__input:not(:placeholder-shown).signup__input:not(:focus) + .signup__label {
+	top: -12px;
+	font-size: var(--small-font-size);
+}
+
+.login__check,
+.signup__check,
+.login__check-group,
+.signup__check-group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 1.5rem;
+}
+
+.login__check-input,
+.signup__check-input {
+	width: 16px;
+	height: 16px;
+}
+
+.login__forgot,
+.signup__forgot {
+	font-size: var(--small-font-size);
+	color: var(--white-color);
+}
+
+.login__forgot:hover,
+.signup__forgot:hover {
+	text-decoration: underline;
+}
+
+.login__button {
+	width: 100%;
+	padding: 1rem;
+	border-radius: .5rem;
+	background-color: var(--white-color);
+	font-weight: var(--font-medium);
+	cursor: pointer;
+	margin-bottom: 2rem;
+}
+
+.login__register,
+.signup__register {
+	text-align: center;
+}
+
+.login__register a,
+.signup__register a {
+	color: var(--white-color);
+	font-weight: var(--font-medium);
+}
+
+.login__register a:hover,
+.signup__register a:hover {
+	text-decoration: underline;
+}

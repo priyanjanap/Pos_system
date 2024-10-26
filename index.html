@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
+
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/customer.css" rel="stylesheet">
+    <link href="assets/css/order.css" rel="stylesheet">
+    <link href="assets/css/dashboard/calender.css" rel="stylesheet">
+    <link href="assets/css/dashboard/chart.css" rel="stylesheet">
+    <link href="assets/css/dashboard/dashboard-inputs.css" rel="stylesheet">
+    <link href="assets/css/item.css" rel="stylesheet">
+
+    <title>Inventory Management system</title>
+</head>
+<body>
+<header class="header" id="header">
+    <div class="header__container">
+        <a class="header__logo" href="#">
+            <i class="ri-cloud-fill"></i>
+            <span>Cloud</span>
+        </a>
+
+        <button class="header__toggle" id="header-toggle">
+            <i class="ri-menu-line"></i>
+        </button>
+    </div>
+
+</header>
+
+<nav class="sidebar" id="sidebar">
+    <div class="sidebar__container">
+        <div class="sidebar__user">
+            <div class="sidebar__img">
+                <img alt="image" src="assets/img/perfil.png">
+            </div>
+
+            <div class="sidebar__info">
+                <h3>Pasindu Priyanjana</h3>
+                <span>pasindupriyanjana2002@gmail.com</span>
+            </div>
+        </div>
+
+        <div class="sidebar__content">
+            <div>
+                <h3 class="sidebar__title">MANAGE</h3>
+
+                <div class="sidebar__list">
+                    <a class="sidebar__link active-link" href="#" id="dashboardBtn">
+                        <i class="ri-pie-chart-2-fill"></i>
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a class="sidebar__link" href="#" id="customerBtn">
+                        <i class="ri-user-fill"></i>
+                        <span>Customer</span>
+                    </a>
+
+                    <a class="sidebar__link" href="#" id="inventoryBtn">
+                        <i class="ri-stack-fill"></i>
+                        <span>Inventory</span>
+                    </a>
+
+                    <a class="sidebar__link" href="#" id="ordersBtn">
+                        <i class="ri-shopping-bag-fill"></i>
+                        <span>Orders</span>
+                    </a>
+
+                    <a class="sidebar__link" href="#" id="paymentBtn">
+                        <i class="ri-bank-card-fill"></i>
+                        <span>Payment</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sidebar__title">SETTINGS</h3>
+
+                <div class="sidebar__list">
+                    <a class="sidebar__link" href="#">
+                        <i class="ri-settings-3-fill"></i>
+                        <span>Settings</span>
+                    </a>
+
+                    <a class="sidebar__link" href="#">
+                        <i class="ri-mail-unread-fill"></i>
+                        <span>My Messages</span>
+                    </a>
+
+                    <a class="sidebar__link" href="#">
+                        <i class="ri-notification-2-fill"></i>
+                        <span>Notifications</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar__actions">
+            <button>
+                <i class="ri-moon-clear-fill sidebar__link sidebar__theme" id="theme-button">
+                    <span>Theme</span>
+                </i>
+            </button>
+
+            <button class="sidebar__link" id="logOut">
+                <i class="ri-logout-box-r-fill"></i>
+                <span>Log Out</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main class="main container" id="main">
+    <section class="dashboard_section" id="dashboard-section">
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button id="prevMonth" class="nav-btn">‹</button>
+                <div id="monthYear" class="month-year"></div>
+                <button id="nextMonth" class="nav-btn">›</button>
+            </div>
+            <div class="calendar-body">
+                <div class="day-names">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div id="calendarDays" class="days-grid"></div>
+            </div>
+        </div>
+        <div class="chart-container">
+            <h2>Sales Over Time</h2>
+            <div class="bar-chart">
+                <div class="bar-wrapper">
+                    <div class="bar" data-value="60" style="height: 60%"></div>
+                    <span class="month-label">Jan</span>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" data-value="80" style="height: 80%"></div>
+                    <span class="month-label">Feb</span>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" data-value="40" style="height: 40%"></div>
+                    <span class="month-label">Mar</span>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" data-value="90" style="height: 90%"></div>
+                    <span class="month-label">Apr</span>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" data-value="50" style="height: 50%"></div>
+                    <span class="month-label">May</span>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" data-value="70" style="height: 70%"></div>
+                    <span class="month-label">Jun</span>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" data-value="50" style="height: 50%"></div>
+                    <span class="month-label">Jul</span>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" data-value="90" style="height: 90%"></div>
+                    <span class="month-label">Aug</span>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" data-value="30" style="height: 30%"></div>
+                    <span class="month-label">Sep</span>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" data-value="60" style="height: 60%"></div>
+                    <span class="month-label">Oct</span>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" data-value="80" style="height: 80%"></div>
+                    <span class="month-label">Nov</span>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" data-value="75" style="height: 75%"></div>
+                    <span class="month-label">Dec</span>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-inputs">
+            <div class="overview-cards">
+                <div class="card">
+                    <h3>Total Customers</h3>
+                    <p>250</p>
+                </div>
+                <div class="card">
+                    <h3>Total Items</h3>
+                    <p>500</p>
+                </div>
+                <div class="card">
+                    <h3>Total Payments Made</h3>
+                    <p>$15,000</p>
+                </div>
+                <div class="card">
+                    <h3>Pending Tasks</h3>
+                    <p>5</p>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+                <ul>
+                    <li>Customer John Doe added 2 items to the cart.</li>
+                    <li>Order #12345 processed for $150.</li>
+                    <li>Payment of $300 received from Jane Smith.</li>
+                </ul>
+            </div>
+
+            <div class="quick-actions">
+                <button>Add Customer</button>
+                <button>Add Item</button>
+                <button>Make Payment</button>
+                <button>Add Order</button>
+            </div>
+        </div>
+
+
+    </section>
+    <section class="customer_section" id="customer-section">
+        <div class="div" id="ovrCus">
+
+            <h1>Overoll Customers</h1>
+
+            <div class="secformdiv" id="categoryCus">
+                <h4>Total Customers</h4>
+                <h6>24 <br> Last 07 Days</h6>
+            </div>
+
+            <div class="input-group mb-3" id="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input aria-label="Text input with dropdown button" class="form-control" type="text">
+                <button aria-expanded="false" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                        type="button">Dropdown
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+            </div>
+
+            <button class="btn btn-primary" id="btn" type="button">Add Customer</button>
+            <div class="popup-overlay" id="popupOverlay" style="display: none;">
+                <div class="popup">
+                    <h2>Add Customer</h2>
+                    <form id="addCustomerForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="customerId">Customer ID</label>
+                                <input type="text" id="customerId" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactNumber">Contact Number</label>
+                                <input type="number" id="contactNumber" required>
+                            </div>
+                        </div>
+                        <label for="customerName">Customer Name:</label>
+                        <input type="text" id="customerName" required>
+                        <label for="customerAddress">Customer Address:</label>
+                        <input type="text" id="customerAddress" required>
+                        <label for="customerEmail">Customer Email:</label>
+                        <input type="email" id="customerEmail" required>
+                        <button type="submit">Add Customer</button>
+                        <button type="button" id="closePopup">Cancel</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div id="line1Cus"></div>
+        </div>
+
+        <div class="scroll" id="order">
+            <h1>Customers</h1>
+            <div id="lineCus"></div>
+            <table class="table" id="tblCus">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Full name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Date</th>
+                </tr>
+                </thead>
+                <tbody id="customerTbody">
+
+
+                </tbody>
+            </table>
+        </div>
+<!--        <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="modelAddCustomer"-->
+<!--             tabindex="-1">-->
+<!--            <div class="modal-dialog">-->
+<!--                <div class="modal-content">-->
+<!--                    <div class="modal-header">-->
+<!--                        <h1 class="modal-title fs-5" id="customerModelHeader">Add new Customer</h1>-->
+<!--                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>-->
+<!--                    </div>-->
+<!--                    <div class="modal-body">-->
+<!--                        <form class="row g-3">-->
+<!--                            <div class="col-md-6">-->
+<!--                                <label class="form-label">Customer ID</label>-->
+<!--                                <input class="form-control" disabled id="customerIdField" placeholder="C00-001"-->
+<!--                                       type="text">-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <label class="form-label">Contact Number</label>-->
+<!--                                <input class="form-control" id="customerContactField" type="text">-->
+<!--                            </div>-->
+<!--                            <div class="col-md-12">-->
+<!--                                <label class="form-label">Customer Name</label>-->
+<!--                                <input class="form-control" id="cusrtomerNameField" type="text">-->
+<!--                            </div>-->
+<!--                            <div class="col-12">-->
+<!--                                <label class="form-label">Address</label>-->
+<!--                                <input class="form-control" id="customerAddressField" type="text">-->
+<!--                            </div>-->
+<!--                        </form>-->
+
+<!--                    </div>-->
+<!--                    <div class="modal-footer">-->
+<!--                        <button class="btn btn-secondary" id="customerDeleteBtn" type="button">Close</button>-->
+<!--                        <button class="btn btn-primary" id="customerSavebtn" type="button">Save changes</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </section>
+    <section class="item_section" id="item-section">
+        <div class="overview">
+            <div class="overview-item">
+                <h3>Total Products</h3>
+                <p id="total-products">0</p>
+            </div>
+            <div class="overview-item">
+                <h3>Total Selling</h3>
+                <p id="total-selling">0</p>
+            </div>
+            <div class="overview-item">
+                <h3>Low Stock</h3>
+                <p id="low-stock">0</p>
+            </div>
+        </div>
+
+        <button id="add-item-btn">Add Item</button>
+
+        <table class="table" id="tableItems">
+            <thead>
+            <tr>
+                <th>Code</th>
+                <th>Product</th>
+                <th>Buying Price</th>
+                <th>QTY</th>
+                <th>Brand</th>
+                <th>Selling Price</th>
+                <th>Expire Date</th>
+                <th>Availability</th>
+            </tr>
+            </thead>
+            <tbody id="itemTableBody">
+            </tbody>
+        </table>
+        <div id="popupOverlay1" class="popup-overlay-item" style="display: none">
+            <div class="popup">
+                <h2>Add Item</h2>
+                <form id="addItemForm">
+                    <div class="input-group">
+                        <label for="itemCode">Code</label>
+                        <input type="text" id="itemCode" required />
+                    </div>
+                    <div class="input-group">
+                        <label for="productName">Product</label>
+                        <input type="text" id="productName" required />
+                    </div>
+                    <div class="input-group">
+                        <label for="buyingPrice">Buying Price</label>
+                        <input type="number" id="buyingPrice" required />
+                    </div>
+                    <div class="input-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" required />
+                    </div>
+                    <div class="input-group">
+                        <label for="brand">Brand</label>
+                        <select id="brand" required>
+                            <option value="">Select a brand</option>
+                            <option value="brand1">Brand 1</option>
+                            <option value="brand2">Brand 2</option>
+                            <option value="brand3">Brand 3</option>
+                        </select>                    </div>
+                    <div class="input-group">
+                        <label for="sellingPrice">Selling Price</label>
+                        <input type="number" id="sellingPrice" required />
+                    </div>
+                    <div class="input-group">
+                        <label for="expireDate">Expiry Date</label>
+                        <input type="date" id="expireDate" required />
+                    </div>
+                    <div class="input-group">
+                        <label for="availability">Availability</label>
+                        <input type="text" id="availability" required />
+                    </div>
+                    <button type="submit">Add Item</button>
+                    <button type="button" id="closePopup1">Close</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="order_section" id="order-section">
+<!--        <div id="orderSummaryPopup" class="order-summary-popup" style="display: none;">-->
+<!--            <h2>Order Summary</h2>-->
+<!--            <div class="summary-details">-->
+<!--                <p><strong>Order Code:</strong> <span id="summaryOrderCode"></span></p>-->
+<!--                <p><strong>Product:</strong> <span id="summaryProductName"></span></p>-->
+<!--                <p><strong>Quantity:</strong> <span id="summaryQuantity"></span></p>-->
+<!--                <p><strong>Total Price:</strong> <span id="summaryTotalPrice"></span></p>-->
+<!--                <p><strong>Estimated Delivery:</strong> <span id="summaryDeliveryDate"></span></p>-->
+<!--            </div>-->
+<!--            <div class="confirmation">-->
+<!--                <label>-->
+<!--                    <input type="checkbox" id="confirmationCheckbox" required>-->
+<!--                    I have reviewed my order.-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <button id="submitOrderBtn" disabled>Confirm and Submit Order</button>-->
+<!--        </div>-->
+        <div class="overall-summary">
+            <h2>Order Overview</h2>
+            <div class="summary-container">
+                <div class="summary-item">
+                    <p>Total Orders</p>
+                    <span id="totalOrders">0</span>
+                </div>
+                <div class="summary-item">
+                    <p>Total Products</p>
+                    <span id="totalProducts">0</span>
+                </div>
+                <div class="summary-item">
+                    <p>Total Amount</p>
+                    <span id="totalAmount">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <p>Total Customer</p>
+                    <span id="totalCustomer">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="order-container">
+            <div class="order-header">
+                <h2>Orders</h2>
+                <button id="addOrderButton">Add Order</button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer ID</th>
+                        <th>Customer Name</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody id="orderTableBody">
+                    <!-- Rows will go here -->
+                    <!-- Example Row -->
+                    <tr>
+                        <td>ORD001</td>
+                        <td>CUST01</td>
+                        <td>John Doe</td>
+                        <td>2024-10-26</td>
+                        <td>$100.00</td>
+                        <td>Online</td>
+                        <td><button class="delete-btn">Delete</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr class="table-underline">
+        </div>
+
+    </section>
+    <section class="payment_section" id="payment-section">
+        <h1>payment</h1>
+    </section>
+</main>
+<script src="assets/lib/jquery-3.7.1.min.js"></script>
+<script src="assets/lib/jquery-3.7.1.min1.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="controller/customer.js" type="module"></script>
+<script src="model/customerModel.js"></script>
+<script src="controller/item.js" type="module"></script>
+<script src="controller/orders.js" type="module"></script>
+<script src="controller/payment.js" type="module"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
