@@ -7,6 +7,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
     <link href="assets/css/styles.css" rel="stylesheet">
     <link href="assets/css/customer.css" rel="stylesheet">
@@ -15,6 +17,7 @@
     <link href="assets/css/dashboard/chart.css" rel="stylesheet">
     <link href="assets/css/dashboard/dashboard-inputs.css" rel="stylesheet">
     <link href="assets/css/item.css" rel="stylesheet">
+    <link href="assets/css/payment.css" rel="stylesheet">
 
     <title>Inventory Management system</title>
 </head>
@@ -119,9 +122,9 @@
     <section class="dashboard_section" id="dashboard-section">
         <div class="calendar-container">
             <div class="calendar-header">
-                <button id="prevMonth" class="nav-btn">‹</button>
-                <div id="monthYear" class="month-year"></div>
-                <button id="nextMonth" class="nav-btn">›</button>
+                <button class="nav-btn" id="prevMonth">‹</button>
+                <div class="month-year" id="monthYear"></div>
+                <button class="nav-btn" id="nextMonth">›</button>
             </div>
             <div class="calendar-body">
                 <div class="day-names">
@@ -133,7 +136,7 @@
                     <div>Fri</div>
                     <div>Sat</div>
                 </div>
-                <div id="calendarDays" class="days-grid"></div>
+                <div class="days-grid" id="calendarDays"></div>
             </div>
         </div>
         <div class="chart-container">
@@ -241,7 +244,8 @@
             <div class="input-group mb-3" id="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input aria-label="Text input with dropdown button" class="form-control" type="text">
-                <button aria-expanded="false" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                <button aria-expanded="false" class="btn btn-outline-secondary dropdown-toggle"
+                        data-bs-toggle="dropdown" id="dropDown"
                         type="button">Dropdown
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -258,26 +262,32 @@
             <button class="btn btn-primary" id="btn" type="button">Add Customer</button>
             <div class="popup-overlay" id="popupOverlay" style="display: none;">
                 <div class="popup">
-                    <h2>Add Customer</h2>
-                    <form id="addCustomerForm">
+                    <h2 id="ADDCUSTOMER">Add Customer</h2>
+                    <form id="addCustomerForm" novalidate>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="customerId">Customer ID</label>
-                                <input type="text" id="customerId" required>
+                                <input id="customerId" required type="text">
                             </div>
                             <div class="form-group">
                                 <label for="contactNumber">Contact Number</label>
-                                <input type="number" id="contactNumber" required>
+                                <input id="contactNumber" placeholder="(+94) 786216768" required type="text">
                             </div>
                         </div>
-                        <label for="customerName">Customer Name:</label>
-                        <input type="text" id="customerName" required>
-                        <label for="customerAddress">Customer Address:</label>
-                        <input type="text" id="customerAddress" required>
-                        <label for="customerEmail">Customer Email:</label>
-                        <input type="email" id="customerEmail" required>
-                        <button type="submit">Add Customer</button>
-                        <button type="button" id="closePopup">Cancel</button>
+                        <div class="form-group">
+                            <label for="customerName">Customer Name</label>
+                            <input id="customerName" required type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="customerAddress">Customer Address</label>
+                            <input id="customerAddress" required type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="customerEmail">Customer Email</label>
+                            <input id="customerEmail" required type="email">
+                        </div>
+                        <button id="customerSaveBtn" type="submit">Add Customer</button>
+                        <button id="closePopup" type="button">Cancel</button>
                     </form>
                 </div>
             </div>
@@ -306,43 +316,6 @@
                 </tbody>
             </table>
         </div>
-<!--        <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="modelAddCustomer"-->
-<!--             tabindex="-1">-->
-<!--            <div class="modal-dialog">-->
-<!--                <div class="modal-content">-->
-<!--                    <div class="modal-header">-->
-<!--                        <h1 class="modal-title fs-5" id="customerModelHeader">Add new Customer</h1>-->
-<!--                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>-->
-<!--                    </div>-->
-<!--                    <div class="modal-body">-->
-<!--                        <form class="row g-3">-->
-<!--                            <div class="col-md-6">-->
-<!--                                <label class="form-label">Customer ID</label>-->
-<!--                                <input class="form-control" disabled id="customerIdField" placeholder="C00-001"-->
-<!--                                       type="text">-->
-<!--                            </div>-->
-<!--                            <div class="col-md-6">-->
-<!--                                <label class="form-label">Contact Number</label>-->
-<!--                                <input class="form-control" id="customerContactField" type="text">-->
-<!--                            </div>-->
-<!--                            <div class="col-md-12">-->
-<!--                                <label class="form-label">Customer Name</label>-->
-<!--                                <input class="form-control" id="cusrtomerNameField" type="text">-->
-<!--                            </div>-->
-<!--                            <div class="col-12">-->
-<!--                                <label class="form-label">Address</label>-->
-<!--                                <input class="form-control" id="customerAddressField" type="text">-->
-<!--                            </div>-->
-<!--                        </form>-->
-
-<!--                    </div>-->
-<!--                    <div class="modal-footer">-->
-<!--                        <button class="btn btn-secondary" id="customerDeleteBtn" type="button">Close</button>-->
-<!--                        <button class="btn btn-primary" id="customerSavebtn" type="button">Save changes</button>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
     </section>
     <section class="item_section" id="item-section">
         <div class="overview">
@@ -360,7 +333,7 @@
             </div>
         </div>
 
-        <button id="add-item-btn">Add Item</button>
+        <button id="add-item-btn" type="button">Add Item</button>
 
         <table class="table" id="tableItems">
             <thead>
@@ -378,25 +351,25 @@
             <tbody id="itemTableBody">
             </tbody>
         </table>
-        <div id="popupOverlay1" class="popup-overlay-item" style="display: none">
+        <div class="popup-overlay-item" id="popupOverlay1" style="display: none">
             <div class="popup">
-                <h2>Add Item</h2>
+                <h2 id="itemHeader">Add Item</h2>
                 <form id="addItemForm">
                     <div class="input-group">
                         <label for="itemCode">Code</label>
-                        <input type="text" id="itemCode" required />
+                        <input id="itemCode" required type="text"/>
                     </div>
                     <div class="input-group">
                         <label for="productName">Product</label>
-                        <input type="text" id="productName" required />
+                        <input id="productName" required type="text"/>
                     </div>
                     <div class="input-group">
                         <label for="buyingPrice">Buying Price</label>
-                        <input type="number" id="buyingPrice" required />
+                        <input id="buyingPrice" required type="number"/>
                     </div>
                     <div class="input-group">
                         <label for="quantity">Quantity</label>
-                        <input type="number" id="quantity" required />
+                        <input id="quantity" required type="number"/>
                     </div>
                     <div class="input-group">
                         <label for="brand">Brand</label>
@@ -405,44 +378,28 @@
                             <option value="brand1">Brand 1</option>
                             <option value="brand2">Brand 2</option>
                             <option value="brand3">Brand 3</option>
-                        </select>                    </div>
+                        </select></div>
                     <div class="input-group">
                         <label for="sellingPrice">Selling Price</label>
-                        <input type="number" id="sellingPrice" required />
+                        <input id="sellingPrice" required type="number"/>
                     </div>
                     <div class="input-group">
                         <label for="expireDate">Expiry Date</label>
-                        <input type="date" id="expireDate" required />
+                        <input id="expireDate" required type="date"/>
                     </div>
                     <div class="input-group">
                         <label for="availability">Availability</label>
-                        <input type="text" id="availability" required />
+                        <input id="availability" required type="text"/>
                     </div>
-                    <button type="submit">Add Item</button>
-                    <button type="button" id="closePopup1">Close</button>
+                    <button id="addItem" type="button">Add Item</button>
+                    <button id="closeItemBtn" type="button">Close</button>
                 </form>
             </div>
         </div>
     </section>
 
     <section class="order_section" id="order-section">
-<!--        <div id="orderSummaryPopup" class="order-summary-popup" style="display: none;">-->
-<!--            <h2>Order Summary</h2>-->
-<!--            <div class="summary-details">-->
-<!--                <p><strong>Order Code:</strong> <span id="summaryOrderCode"></span></p>-->
-<!--                <p><strong>Product:</strong> <span id="summaryProductName"></span></p>-->
-<!--                <p><strong>Quantity:</strong> <span id="summaryQuantity"></span></p>-->
-<!--                <p><strong>Total Price:</strong> <span id="summaryTotalPrice"></span></p>-->
-<!--                <p><strong>Estimated Delivery:</strong> <span id="summaryDeliveryDate"></span></p>-->
-<!--            </div>-->
-<!--            <div class="confirmation">-->
-<!--                <label>-->
-<!--                    <input type="checkbox" id="confirmationCheckbox" required>-->
-<!--                    I have reviewed my order.-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <button id="submitOrderBtn" disabled>Confirm and Submit Order</button>-->
-<!--        </div>-->
+
         <div class="overall-summary">
             <h2>Order Overview</h2>
             <div class="summary-container">
@@ -467,7 +424,7 @@
         <div class="order-container">
             <div class="order-header">
                 <h2>Orders</h2>
-                <button id="addOrderButton">Add Order</button>
+                <button id="addOrderButton" type="button">Add Order</button>
             </div>
             <div class="table-container">
                 <table>
@@ -483,37 +440,162 @@
                     </tr>
                     </thead>
                     <tbody id="orderTableBody">
-                    <!-- Rows will go here -->
-                    <!-- Example Row -->
-                    <tr>
-                        <td>ORD001</td>
-                        <td>CUST01</td>
-                        <td>John Doe</td>
-                        <td>2024-10-26</td>
-                        <td>$100.00</td>
-                        <td>Online</td>
-                        <td><button class="delete-btn">Delete</button></td>
-                    </tr>
+
+
                     </tbody>
                 </table>
             </div>
             <hr class="table-underline">
         </div>
+            <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="placeOrderModel"
+                 tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content" id="modelContent">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5">Place Order</h1>
+                            <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                        </div>
+                        <div class="modal-body">
 
+                            <div class="dropdown" id="custDrop">
+                                <button aria-expanded="false" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                                        id="customerDrpBtn" type="button">
+                                    Select Customer Id
+                                </button>
+                                <ul class="dropdown-menu" id="customerIdsDropDown">
+                                    <li><a class="dropdown-item" href="#">AAAA</a></li>
+                                </ul>
+                            </div>
+                            <form class="form-floating col-md-4" id="custN">
+                                <input class="form-control" id="CustomerNameOrder" placeholder="name@example.com"
+                                       type="email">
+                                <label for="CustomerNameOrder">Customer Name</label>
+                            </form>
+                            <form class="form-floating col-md-4" id="custA">
+                                <input class="form-control" id="CustomerAddressOrder" placeholder="name@example.com"
+                                       type="email">
+                                <label for="CustomerAddressOrder">Customer Address</label>
+                            </form>
+
+                            <div class="dropdown" id="itemDrop">
+                                <button aria-expanded="false" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                                        id="itemDropbtn" type="button">
+                                    Select Item Code
+                                </button>
+                                <ul class="dropdown-menu" id="itemorderDrop">
+                                </ul>
+                            </div>
+                            <form class="form-floating col-md-4" id="itemN">
+                                <input class="form-control" id="ItemName" placeholder="name@example.com" type="email">
+                                <label for="ItemName">Item Name</label>
+                            </form>
+                            <form class="form-floating col-md-4" id="itemP">
+                                <input class="form-control" id="ItemPrice" placeholder="name@example.com" type="email">
+                                <label for="ItemPrice">Item Price</label>
+                            </form>
+                            <form class="form-floating col-md-3" id="itemQNH">
+                                <input class="form-control" id="ItemQtyOnHand" placeholder="name@example.com"
+                                       type="email">
+                                <label for="ItemQtyOnHand">QTY on hand</label>
+                            </form>
+                            <form class="form-floating col-md-4" id="itemQTYGet">
+                                <input class="form-control" id="itemQtygetting" placeholder="name@example.com"
+                                       type="email">
+                                <label for="itemQtygetting">QTY Buy</label>
+                            </form>
+                            <button class="btn btn-primary" id="btnAddcart" type="button">Add to cart!</button>
+
+                            <table class="table" id="tblItemCart">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Item Code</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Unit Price</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                                </thead>
+                                <tbody id="placeOrderTable">
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <form class="form-floating col-md-4" id="netTotal">
+                                <input class="form-control" id="orderTotal" placeholder="name@example.com" type="email">
+                                <label for="orderTotal">Total Amount</label>
+                            </form>
+                            <form class="form-floating col-md-4" id="discount">
+                                <input class="form-control" id="discountValue" placeholder="name@example.com"
+                                       type="email">
+                                <label for="discountValue">Discount(%)</label>
+                            </form>
+                            <form class="form-floating col-md-4" id="netPaytotal">
+                                <input class="form-control" id="netPay" placeholder="name@example.com" type="email">
+                                <label for="netPay">Net Pay</label>
+                            </form>
+                            <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
+                            <button class="btn btn-primary" id="placeOrderEndingBtn" type="button">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </section>
     <section class="payment_section" id="payment-section">
-        <h1>payment</h1>
+        <div class="payment-section">
+            <h2>Payment</h2>
+
+            <div class="payment-options">
+                <label>Choose Payment Method:</label>
+                <div>
+                    <input checked id="credit" name="paymentMethod" type="radio" value="credit">
+                    <label for="credit">Credit Card</label>
+
+                    <input id="paypal" name="paymentMethod" type="radio" value="paypal">
+                    <label for="paypal">PayPal</label>
+
+                    <input id="cash" name="paymentMethod" type="radio" value="cash">
+                    <label for="cash">Cash</label>
+                </div>
+            </div>
+
+            <form id="paymentForm">
+                <label>Subtotal: <input id="subtotal" step="0.01" type="number" value="0"></label>
+                <label>Discount (%): <input id="Rdiscount" step="1" type="number" value="0"></label>
+                <label>Total: <span id="totalPaymentAmount">0</span></label>
+            </form>
+
+            <button class="button" id="paymentTotal" type="button">Calculate Total</button>
+            <button class="button" onclick="confirmPayment()" type="button">Confirm Payment</button>
+            <div class="chart-section">
+                <div class="chart-item">
+                    <h2>Income Chart</h2>
+                    <canvas id="incomeChart"></canvas>
+                </div>
+                <div class="chart-item">
+                    <h2>Outcome Chart</h2>
+                    <canvas id="outcomeChart"></canvas>
+                </div>
+            </div>
+
+        </div>
     </section>
 </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script src="assets/lib/jquery-3.7.1.min.js"></script>
-<script src="assets/lib/jquery-3.7.1.min1.js"></script>
 <script src="assets/js/main.js"></script>
+
+<script src="db/db.js" type="module"></script>
 <script src="controller/customer.js" type="module"></script>
-<script src="model/customerModel.js"></script>
-<script src="controller/item.js" type="module"></script>
-<script src="controller/orders.js" type="module"></script>
+<script src="controller/Inventory.js" type="module"></script>
+<script src="controller/order.js" type="module"></script>
 <script src="controller/payment.js" type="module"></script>
 
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
 </body>
 </html>

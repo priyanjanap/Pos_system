@@ -138,16 +138,31 @@
 #search{
     width: 44vw;
     position: absolute;
-    top: 10vh;
+    top: 5vh;
     left: 24vw;
 }
-#search>i{
-    right: 127px;
-    position: absolute;
-    z-index: 10;
-    top: 11px;
 
+#search {
+    display: flex;
+justify-content: space-between;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    flex-direction: row;
 }
+
+#search .form-control {
+    border-radius: 0;
+    width: 32vw;
+}
+
+#search .dropDown {
+    border-radius: 0;
+    position: relative;
+    left: 350px;
+    width: 12vw;
+}
+
+
 .left-pd {
     padding-left: 114px;
 }
@@ -228,4 +243,11 @@
 
 .popup button:hover {
     filter: brightness(1.1);
+}
+.is-invalid {
+    border: 1px solid red;
+}
+
+.is-valid {
+    border: 1px solid green;
 }

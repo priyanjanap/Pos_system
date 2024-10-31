@@ -1,0 +1,112 @@
+.payment-section {
+    max-width: 100%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-section h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+.payment-options {
+    margin-bottom: 15px;
+}
+
+.payment-options label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.payment-options div {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.payment-options input[type="radio"] {
+    margin-right: 5px;
+}
+
+#paymentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#paymentForm label {
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#paymentForm input[type="number"] {
+    width: 100px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: right;
+}
+
+#totalAmount {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.button {
+    width: 20%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.button:first-of-type {
+    background-color: #007bff;
+}
+
+.button:last-of-type {
+    background-color: #28a745;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+.chart-section {
+    max-width: 800px; /* Adjusted to accommodate both charts */
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create two equal columns */
+    gap: 20px; /* Space between the charts */
+}
+
+.chart-item {
+    padding: 10px;
+    background-color: #f9f9f9; /* Optional background for chart items */
+    border: 1px solid #ddd; /* Optional border for chart items */
+    border-radius: 5px; /* Optional rounded corners */
+}
+
+.chart-section canvas {
+    max-width: 100%;
+}

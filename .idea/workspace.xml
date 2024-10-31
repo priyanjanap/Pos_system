@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8599b3d-c3f8-422b-ad1f-edce07e9d870" name="Changes" comment="" />
+    <list default="true" id="c8599b3d-c3f8-422b-ad1f-edce07e9d870" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/payment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/Inventory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/order.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/InventoryModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/OrderDetailsModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/OrderModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/tm/OrderItemTableList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Pos-System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pos-System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/customer.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/customer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/order.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/order.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/customer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/item.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/orders.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/customerModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/CustomerModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -29,6 +53,9 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2nhEtyQo2w7zu4RaVd7dlFOnVp7" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -36,9 +63,11 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.OrderItemTable.js.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;&lt;unknown&gt;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/PRIYANJANA/Desktop/other github download 2/Pos-System/assets/css/dashboard&quot;,
@@ -48,6 +77,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;copyright&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -106,6 +136,9 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="OrderItemTableList.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/model/tm/OrderItemTableList.js" working-dir="$PROJECT_DIR$/model/tm">
+      <method v="2" />
     </configuration>
     <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
       <module name="My Pos-System" />
@@ -171,6 +204,11 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.OrderItemTableList.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -225,7 +263,39 @@
       <workItem from="1729864441614" duration="402000" />
       <workItem from="1729896453464" duration="2259000" />
       <workItem from="1729898814607" duration="46000" />
-      <workItem from="1729898900358" duration="7277000" />
+      <workItem from="1729898900358" duration="7761000" />
+      <workItem from="1729936347611" duration="416000" />
+      <workItem from="1729937086953" duration="20000" />
+      <workItem from="1729937656738" duration="1016000" />
+      <workItem from="1729939599059" duration="26000" />
+      <workItem from="1729948648513" duration="2425000" />
+      <workItem from="1729971170780" duration="5795000" />
+      <workItem from="1730095689516" duration="956000" />
+      <workItem from="1730101273301" duration="66000" />
+      <workItem from="1730101355487" duration="50000" />
+      <workItem from="1730101866113" duration="27000" />
+      <workItem from="1730101930539" duration="227000" />
+      <workItem from="1730102169759" duration="162000" />
+      <workItem from="1730102429175" duration="160000" />
+      <workItem from="1730102627362" duration="3863000" />
+      <workItem from="1730114182116" duration="2477000" />
+      <workItem from="1730121451074" duration="71000" />
+      <workItem from="1730121555696" duration="2168000" />
+      <workItem from="1730123826283" duration="46000" />
+      <workItem from="1730123986380" duration="2550000" />
+      <workItem from="1730130057940" duration="77000" />
+      <workItem from="1730130169237" duration="54000" />
+      <workItem from="1730130237128" duration="83000" />
+      <workItem from="1730130334657" duration="2379000" />
+      <workItem from="1730132753478" duration="48000" />
+      <workItem from="1730132811653" duration="639000" />
+      <workItem from="1730133479650" duration="884000" />
+      <workItem from="1730195225347" duration="24000" />
+      <workItem from="1730310815832" duration="74000" />
+      <workItem from="1730310908338" duration="45000" />
+      <workItem from="1730311118234" duration="3248000" />
+      <workItem from="1730349570016" duration="15604000" />
+      <workItem from="1730374437243" duration="14103000" />
     </task>
     <servers />
   </component>

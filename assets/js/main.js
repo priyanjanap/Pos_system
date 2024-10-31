@@ -18,7 +18,6 @@ const showSidebar = (toggleId, sidebarId, headerId, mainId, ovrCusID) => {
     }
 };
 
-// Call the function
 showSidebar('header-toggle', 'sidebar', 'header', 'main', 'ovrCus');
 
 const sidebarLink = document.querySelectorAll('.sidebar__list a')

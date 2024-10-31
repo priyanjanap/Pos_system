@@ -1,4 +1,4 @@
-class Customer {
+export default class CustomerModel{
     get id() {
         return this._id;
     }
@@ -7,12 +7,12 @@ class Customer {
         this._id = value;
     }
 
-    get name() {
-        return this._name;
+    get customerName() {
+        return this._customerName;
     }
 
-    set name(value) {
-        this._name = value;
+    set customerName(value) {
+        this._customerName = value;
     }
 
     get address() {
@@ -46,14 +46,13 @@ class Customer {
     set dateAdded(value) {
         this._dateAdded = value;
     }
-    constructor(id, name, address, contact, email) {
+    constructor(id, customerName, address, contact, email) {
         this._dateAdded = new Date().toLocaleDateString();
         this._id = id;
-        this._name = name;
+        this._customerName = customerName;
         this._address = address;
         this._contact = contact;
         this._email = email;
     }
 }
 
-const newCustomer = new Customer(customerId, customerName, customerAddress, contactNumber, customerEmail);

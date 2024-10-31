@@ -1,7 +1,9 @@
-export var inventories = [];
-export var customers = [];
-export var orders = [];
 
+export var customers = [];
+
+export var inventories = [];
 export var orderItems = [];
 
-export var users = [];
+export var orders = [];
+
+

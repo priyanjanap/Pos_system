@@ -147,7 +147,7 @@
 
 .table-container {
     margin-top: 10px;
-    max-height: 300px;
+    max-height: 700px;
     overflow-y: auto;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -192,4 +192,202 @@ table td {
     border-top: 1px solid #ddd;
     margin-top: 5px;
 }
+.popup-overlay-order {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.popup {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 95%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group, .product-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.product-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 50px 70px;
+    gap: 10px;
+    align-items: center;
+}
+
+.price, .subtotal {
+    font-weight: bold;
+    margin: 0;
+}
+
+.remove-item-btn, #addItemBtn, #closePopup-order, [type="submit"] {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.remove-item-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+#addItemBtn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+#closePopup-order {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+#placeOrderModel .modal-dialog {
+    max-width: 1000px;
+    margin: auto;
+}
+
+#placeOrderModel .modal-header {
+    background-color: #007bff;
+    color: #fff;
+
+}
+#placeOrderModel .modal-header >h1{
+    text-align: center;
+    justify-content: center;
+}
+
+#placeOrderModel .btn-primary {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+#placeOrderModel .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+
+#placeOrderModel #tblItemCart thead {
+    background-color: #f8f9fa;
+    color: #333;
+
+}
+
+#placeOrderModel #tblItemCart tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+#placeOrderModel .form-control {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+
+#placeOrderModel .modal-footer {
+    justify-content: flex-end;
+}
+#custN{
+    position: relative;
+    left: 250px;
+    bottom: 50px;
+}
+#custA{
+    position: relative;
+    left: 600px;
+    bottom: 100px;
+}
+#itemN{
+    position: relative;
+    left: 250px;
+    bottom: 50px;
+}
+#itemP{
+    position: relative;
+    left: 600px;
+    bottom: 120px;
+}
+#itemQNH{
+    position: relative;
+    bottom: 70px;
+}
+#itemQTYGet{
+    position: relative;
+    left: 250px;
+    bottom: 130px;
+}
+#btnAddcart{
+    position: relative;
+    left: 700px;
+    bottom: 140px;
+}
+#tblItemCart{
+    position: relative;
+    bottom: 100px;
+    height: 10vh;
+
+}
+
+#tblItemCart thead {
+    background-color: #f8f9fa;
+    color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#tblItemCart tbody {
+    background-color: #ffffff;
+    border: 2px solid black;
+}
+
+#tblItemCart tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tblItemCart th,
+#tblItemCart td {
+    padding: 0.75rem;
+    text-align: center;
+}
+
+#tblItemCart .btn-delete {
+    color: #dc3545;
+    cursor: pointer;
+}
+#netTotal{
+    position: relative;
+    left: -300px;
+    top: -20px;
+}
+#netPaytotal{
+    position: relative;
+    left: -440px;
+    top:-20px;
+}
+#discount{
+    position: relative;
+    left: -250px;
+    bottom: 20px;
+}
